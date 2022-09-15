@@ -11,8 +11,9 @@ function saveToDos(){
 }
 
 function deletToDo(event){
-    const li = event.target.parentElement;
+    const li = event.target.parentElement; // target은 이벤트가 일어난 곳
     toDos = toDos.filter(item => item.id !== parseInt(li.id)); //parseInt string -> int
+    //id에 맞지 않는 요소는 toDos로 넣기
     li.remove();
     saveToDos();
 }
@@ -43,7 +44,7 @@ function handleToDoSubmit(event){
     saveToDos();
 }
 
-toDoForm.addEventListener("submit",handleToDoSubmit);
+toDoForm.addEventListener("submit",handleToDoSubmit); //toDoForm에서 sumit이 일어나면 handleToDoSubmit를 실행해주세요
 
 const savedToDos = localStorage.getItem(TODOS_KEY);
 

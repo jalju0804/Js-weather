@@ -17,7 +17,7 @@ function onLoginSubmit(event){
 function paintGreetings(username){
   greeting.innerText = `Hello ${username}`;
   greeting.classList.remove(HIDDEN_CLASSNAME);
-}
+} // 숨겨져 있다가 입력값이 생기면 생김
 
 const savedUsername = localStorage.getItem(USERNAME_KEY);
 
@@ -26,4 +26,4 @@ if(savedUsername === null){
   loginForm.addEventListener("submit",onLoginSubmit);
 } else {
   paintGreetings(savedUsername);
-}
+} // 나타나 있다가 값이 채워지면 숨김
